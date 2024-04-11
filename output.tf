@@ -17,3 +17,7 @@ output "vm_public_ip" {
   value = var.public_ip_enable ? azurerm_public_ip.windows_server_public_ip[0].ip_address :  null
   description = "Public IP of VM"
 }
+
+output "vm_private_ip" {
+  value = var.azurerm_windows_virtual_machine.windows_server.vm_private_ip
+}
