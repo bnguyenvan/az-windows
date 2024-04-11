@@ -40,3 +40,9 @@ variable "public_ip_enable" {
   type = bool
   description = "Should server have a public IP address?"
 }
+
+# Public IP Enable
+variable "autoshutdown_is_enable" {
+  type = bool
+  description = "Should this server schedule shutdown?"
+}

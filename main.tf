@@ -51,3 +51,18 @@ resource "azurerm_network_interface" "windows_server_nic" {
     public_ip_address_id = var.public_ip_enable == true ? azurerm_public_ip.windows_server_public_ip[0].id : null
   }
 }
+
+resource "azurerm_dev_test_global_vm_shutdown_schedule" "shutdown_vm" {
+  virtual_machine_id = azurerm_windows_virtual_machine.windows_server.id
+  location           = var.resource_group_location
+  enabled            = var.autoshutdown_is_enable
+
+  daily_recurrence_time = "0500"
+  timezone              = "SE Asia Standard Time"
+
+  notification_settings {
+    enabled         = true
+    time_in_minutes = "1"
+    email = "bong.nguyen@zoi.tech"
+  }
+}
