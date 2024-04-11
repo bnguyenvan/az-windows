@@ -19,5 +19,5 @@ output "vm_public_ip" {
 }
 
 output "vm_private_ip" {
-  value = var.azurerm_windows_virtual_machine.windows_server.vm_private_ip
+  value = azurerm_windows_virtual_machine.windows_server.private_ip_address
 }
