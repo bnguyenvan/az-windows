@@ -14,7 +14,7 @@ output "vm_id" {
 }
 
 output "vm_public_ip" {
-  value = var.public_ip_enable ? azurerm_public_ip.windows_server_public_ip[0].ip_address :  null
+  value = azurerm_windows_virtual_machine.windows_server.public_ip_address
   description = "Public IP of VM"
 }
 
