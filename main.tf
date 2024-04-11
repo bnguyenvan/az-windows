@@ -57,7 +57,7 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "shutdown_vm" {
   location           = var.resource_group_location
   enabled            = var.autoshutdown_is_enable
 
-  daily_recurrence_time = "0500"
+  daily_recurrence_time = var.autoshutdown_time
   timezone              = "SE Asia Standard Time"
 
   notification_settings {

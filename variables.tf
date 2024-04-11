@@ -41,8 +41,15 @@ variable "public_ip_enable" {
   description = "Should server have a public IP address?"
 }
 
-# Public IP Enable
+# Autoshutdown enable?
 variable "autoshutdown_is_enable" {
   type = bool
   description = "Should this server schedule shutdown?"
+}
+
+# Autoshutdown time
+variable "autoshutdown_time" {
+  type = string
+  description = "When this server should be auto shutdown (GMT+7), enter HHmm, defaut is 1700 means 17h:00"
+  default = "1700"
 }
