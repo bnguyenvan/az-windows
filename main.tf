@@ -62,7 +62,7 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "shutdown_vm" {
 
   notification_settings {
     enabled         = true
-    time_in_minutes = "1"
+    time_in_minutes = "15"
     email = "bong.nguyen@zoi.tech"
   }
 }
